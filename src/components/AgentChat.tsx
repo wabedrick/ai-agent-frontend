@@ -11,7 +11,7 @@ interface Message {
 
 export default function AgentChat() {
     const [messages, setMessages] = useState<Message[]>([
-        { text: "Hello! I am your AI Orchestrator. How can I assist you today?", sender: "bot" }
+        { text: "Hello! I am Edrick your AI Assistant. How can I assist you today?", sender: "bot" }
     ]);
     const [input, setInput] = useState<string>("");
     const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -105,7 +105,7 @@ export default function AgentChat() {
                 {isLoading && (
                     <div style={styles.botRow}>
                         <div style={styles.loaderBubble}>
-                            <span>Agent executing tools...</span>
+                            <span>Thinking...</span>
                         </div>
                     </div>
                 )}
