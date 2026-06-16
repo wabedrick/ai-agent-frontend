@@ -61,7 +61,7 @@ export default function AgentChat() {
 
             setMessages((prev) => [...prev, { text: data.reply, sender: "bot" }]);
         } catch (error) {
-            let errorText = "⚠️ Connection failed. The container may be waking up. Try again in a moment.";
+            let errorText = "⚠️ Rate Limit exceeded. Please try again in a moment.";
 
             if (error instanceof Error) {
                 if (error.message === "rate_limited") {
