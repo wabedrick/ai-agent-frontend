@@ -45,7 +45,11 @@ export default function AgentChat() {
             const response = await fetch(`${BACKEND_URL}/chat`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ message: userMessage }),
+                body: JSON.stringify({
+                    message: userMessage,
+                    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                    local_time: new Date().toLocaleString(),
+                }),
             });
 
             if (response.status === 429) throw new Error("rate_limited");
